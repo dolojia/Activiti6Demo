@@ -18,6 +18,7 @@ import org.activiti.engine.impl.interceptor.CommandContext;
 import org.activiti.engine.impl.persistence.entity.ExecutionEntity;
 import org.activiti.engine.impl.persistence.entity.TaskEntity;
 import org.activiti.engine.impl.persistence.entity.TaskEntityManagerImpl;
+import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.repository.ProcessDefinitionQuery;
 import org.activiti.engine.runtime.ProcessInstance;
@@ -278,6 +279,16 @@ public class ActivitiServiceImpl implements ActivitiService {
     @Override
     public void rejectTask(String taskId, String assignee, boolean returnStart) {
         jump(this, taskId, assignee, returnStart);
+    }
+
+    @Override
+    public Deployment deployBpmnFile(InputStream inputStream, String fileName, String category) {
+        Deployment deployment = repositoryService.createDeployment()
+                .addInputStream(fileName, inputStream)
+                .name(fileName)
+                .category(category)
+                .deploy();
+        return deployment;
     }
 
     //跳转方法

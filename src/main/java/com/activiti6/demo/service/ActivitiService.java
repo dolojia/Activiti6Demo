@@ -1,5 +1,6 @@
 package com.activiti6.demo.service;
 
+import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.runtime.ProcessInstance;
 
 import java.io.InputStream;
@@ -107,4 +108,5 @@ public interface ActivitiService {
     public void rejectTask(String taskId, String assignee, boolean returnStart);
 
 
+    Deployment deployBpmnFile(InputStream inputStream, String fileName, String category);
 }

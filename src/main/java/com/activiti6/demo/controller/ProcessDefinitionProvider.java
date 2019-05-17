@@ -102,6 +102,20 @@ public class ProcessDefinitionProvider  {
         }
     }
 
+    @PostMapping(value="/deploy/bpmn")
+    @ApiOperation(value="bpmn file deployment",notes = "deploybpmn")
+    public R deployBpmn(@ApiParam(value = "BPMN file") @RequestParam(value = "file", required = false) MultipartFile file,
+                        @ApiParam(value = "category") @RequestParam(value = "category", required = false) String  category){
+        try {
+            InputStream inputStream = file.getInputStream();
+            String fileName = file.getOriginalFilename();
+            activitiService.deployBpmnFile(inputStream, fileName, category);
+            return R.ok();
+        }catch (Exception e){
+            return R.error(e.getMessage());
+        }
+    }
+
     /***
      * 开始流程
      */

@@ -1,13 +1,18 @@
 server:
   port: 1855
+  ssl:
+    key-store: /https/keystore.p12
+    key-store-password: chengdu
+    key-store-type: PKCS12
+    key-alias: tomcat
 
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/activiti?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/workflow_demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
-    password: 123123
+    password: shootercheng
     initial-size: 10
     max-active: 100
     min-idle: 10
