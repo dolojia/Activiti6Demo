@@ -112,8 +112,8 @@ public class ProcessDefinitionProvider  {
             activitiService.deployBpmnFile(inputStream, fileName, category);
             return R.ok();
         }catch (Exception e){
-            return R.error(e.getMessage());
         }
+        return R.error("error");
     }
 
     /***

@@ -893,3 +893,11 @@ API: <br>
         "code": 1,
         "isFinish":true
     }    
+
+# 开发环境配置jasypt
+Edit config --> VM options
+![jasypt confog](img/jasypt-dev-config.png)
+
+## 项目部署加密密钥配置java -jar -Djasypt.encryptor.password=G0CvDz7oJn6 xxx.jar
+
+java -jar -Djasypt.encryptor.password=G0CvDz7oJn6 xxx.jar

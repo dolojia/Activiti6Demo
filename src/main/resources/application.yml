@@ -10,9 +10,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/workflow_demo?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: shootercheng
+    url: ENC(RT7c8hSRKUSvJoQeBOk4j8EkojYczdy1bBNf8sU5gYbmHuX3GWTGvEJ1Zd3NaJQLCI2CPuJdQ+s13aTdmRh1jrymK6P9Ujmz5GYLj/pZoDnryDEMk61R36E8CyfCtwNvv4bIOfvSYYlBzGbflVHL8feBV7YJlUGmqeSDCjEAueE=)
+    username: ENC(5ZyIQIwsE3i91yQRUMvbuA==)
+    password: ENC(hJALJhGQd4SnSmS/wcMU6Aa/WFTXb6iM)
     initial-size: 10
     max-active: 100
     min-idle: 10
